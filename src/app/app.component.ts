@@ -12,6 +12,8 @@ export class AppComponent implements AfterViewInit {
     ElementRef<HTMLCanvasElement>;
 
   // LAB #2.1
+  context?: CanvasRenderingContext2D;
+
   // LAB #5
   // LAB #11
   // LAB #17
@@ -21,6 +23,14 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // LAB #2.2, 2.3 and 3
+    const canvas = this.canvas!.nativeElement;
+    const ctx = canvas.getContext('2d')!;
+    this.context = ctx;
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'black';
+
     // LAB #16
   }
 
