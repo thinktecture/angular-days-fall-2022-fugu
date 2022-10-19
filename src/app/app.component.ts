@@ -42,6 +42,8 @@ export class AppComponent implements AfterViewInit {
 
   onPointerMove(event: PointerEvent) {
     // LAB #4 and 5
+    this.context!.fillRect(event.offsetX,
+      event.offsetY, 2, 2);
   }
 
   onPointerUp() {
